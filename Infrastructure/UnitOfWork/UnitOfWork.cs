@@ -6,10 +6,12 @@ using System.Text;
 
 namespace Infrastructure.UnitOfWork
 {
-    class UnitOfWork<T> : IUnitOfWork<T> where T : class
+   
+   public class UnitOfWork<T> : IUnitOfWork<T> where T : class
     {
         private readonly DataContext _context;
         private IGenericRepository<T> _entity;
+
         public UnitOfWork(DataContext context)
         {
             _context = context;
